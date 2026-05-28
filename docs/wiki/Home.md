@@ -1,4 +1,4 @@
-# OCExA pipeline for constructing an RNA sequencing (RNA-seq) database
+# GExA pipeline for constructing an RNA sequencing (RNA-seq) database
 
 ## What this pipeline does
 
