@@ -1,4 +1,4 @@
-# Building OCExA-style plant expression atlases from public RNA-seq datasets
+# Building GExA-style plant expression atlases from public RNA-seq datasets
 
 This repository contains a reproducible pipeline that:
 
