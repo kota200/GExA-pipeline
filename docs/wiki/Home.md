@@ -110,6 +110,12 @@ If your gene IDs are stored under a different key (e.g. `gene_id`), edit `mappin
 
 `blastp_annot.sh` expects `./data/Arab_proteins.fasta`, `./data/Os_proteins.fasta`, and annotation TSVs. Create protein BLAST DBs with `makeblastdb`, or use `scripts/build_os_data.sh` to build the rice RGAP7/Oryzabase resources.
 
+Annotation data sources:
+
+- Arabidopsis TAIR10: https://www.arabidopsis.org/download_files/Genes/TAIR10_genome_release/
+- Rice RGAP7 downloads: https://rice.uga.edu/download_osa1r7.shtml
+- Rice Oryzabase English gene list: https://shigen.nig.ac.jp/rice/oryzabase/gene/download?classtag=GENE_EN_LIST
+
 ### 3) Download/mapping failures
 
 Some SRR runs may fail to download or map. `mapping_script.sh` records failures to `Download_failed_list.txt`, and the automated updater also writes `failed_samples.tsv` under the update work directory.
@@ -122,5 +128,8 @@ The updater keeps the existing gene list/order by default. If you explicitly use
 
 - Keep your metadata normalization rules as a TSV mapping file and version-control it.
 - Record software versions and reference genome/annotation versions.
+- Avoid committing large reference files unless licenses allow it.
+- Use the automated updater's `--dry-run` before scheduled or periodic GExA refreshes.
+on versions.
 - Avoid committing large reference files unless licenses allow it.
 - Use the automated updater's `--dry-run` before scheduled or periodic GExA refreshes.
