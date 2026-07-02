@@ -1,0 +1,27 @@
+# Example: update an existing Pearl millet GExA matrix set from the repository root.
+
+bash scripts/GExA_update_script/update_gexa.sh \
+  --species "pearl millet" "Cenchrus americanus" "Pennisetum glaucum" \
+  --prefix PM_Tift \
+  --count Pearl_millet_count_data_cv_Tift.csv \
+  --tpm Pearl_millet_TPM_data_cv_Tift.csv \
+  --mapping-qc PM_Tift_STAR_mapping_w_assigned.tsv \
+  --star-index ../../refs/Tift_idx \
+  --gff ../../refs/Tift_fil.gff3 \
+  --workdir gexa_update_work \
+  --outdir gexa_update_result \
+  --standardize-script standardize_metadata_pearl_millet.py
+
+# Dry-run: search SRA and report samples that would be added, but do not map or merge.
+bash scripts/GExA_update_script/update_gexa.sh \
+  --species "pearl millet" "Cenchrus americanus" "Pennisetum glaucum" \
+  --prefix PM_Tift \
+  --count Pearl_millet_count_data_cv_Tift.csv \
+  --tpm Pearl_millet_TPM_data_cv_Tift.csv \
+  --mapping-qc PM_Tift_STAR_mapping_w_assigned.tsv \
+  --star-index ../../refs/Tift_idx \
+  --gff ../../refs/Tift_fil.gff3 \
+  --workdir gexa_update_dryrun \
+  --outdir gexa_update_dryrun_result \
+  --standardize-script standardize_metadata_pearl_millet.py \
+  --dry-run
