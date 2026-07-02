@@ -121,9 +121,16 @@ STAR --runThreadN 24 \
   Data were obtained from TAIR (Phoenix Bioinformatics) Public_Data_Releases and are licensed under CC BY 4.0.
   We have reformatted files for this pipeline.
   Source: TAIR Public_Data_Releases (download date: 2024-10-01) (Berardini et al., 2015, https://doi.org/10.1002/dvg.22877).
+  Source URL: https://www.arabidopsis.org/download_files/Genes/TAIR10_genome_release/
   License: CC BY 4.0.
 - Rice datasets: RGAP 7, from the Rice Genome Annotation Project (RGAP, Kawahara et al., 2013; https://doi.org/10.1186/1939-8433-6-4)
   and Oryzabase (Kurata and Yamazaki, 2006; https://doi.org/10.1104/pp.105.063008).
+  Source URLs:
+  - RGAP7 download page: https://rice.uga.edu/download_osa1r7.shtml
+  - RGAP7 all-model proteins: https://rice.uga.edu/osa1r7_download/osa1_r7.all_models.pep.fa.gz
+  - RGAP7 functional annotation: https://rice.uga.edu/osa1r7_download/osa1_r7.all_models.functional_annotation.txt.gz
+  - RGAP7 GOSlim annotation: https://rice.uga.edu/osa1r7_download/osa1_r7.all_models.GOSlim.txt.gz
+  - Oryzabase English gene list: https://shigen.nig.ac.jp/rice/oryzabase/gene/download?classtag=GENE_EN_LIST
 
 For the rice datasets, download/build the protein BLAST DBs and annotation files with:
 
