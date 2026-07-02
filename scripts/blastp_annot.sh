@@ -67,7 +67,7 @@ extract_best_annotation() {
         # BLAST has 13 columns. Arab appended columns:
         # 14=short name, 15=summary/description, 16=TAIR functional description,
         # 17=aliases, 18=GO.
-        ann = $16
+        ann = $13
         if (missing(ann)) ann = $15
         if (missing(ann)) ann = $14
         if (missing(ann)) ann = $17
