@@ -32,8 +32,8 @@ from pathlib import Path
 
 
 def normalize_id(x: str) -> str:
-    """Normalize ID for robust matching (strip spaces)."""
-    return x.strip()
+    """Normalize ID for robust matching (strip BOM and spaces)."""
+    return x.replace("\ufeff", "").strip()
 
 
 _iso_re = re.compile(r"\.\d+$")
@@ -78,7 +78,7 @@ def read_annotation(anno_path: Path, key_col_1based: int, sep: str):
     anno_map_exact = {}
     anno_map_gene = {}
 
-    with anno_path.open("r", encoding="utf-8", errors="replace", newline="") as f:
+    with anno_path.open("r", encoding="utf-8-sig", errors="replace", newline="") as f:
         reader = csv.reader(f, delimiter=sep)
         first_row = None
 

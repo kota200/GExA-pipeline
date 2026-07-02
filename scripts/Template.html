@@ -542,7 +542,7 @@ input[type="checkbox"] { margin: 0; }
           <option value="tissue">tissue</option>
           <option value="treatment">treatment</option>
           <option value="stage">stage</option>
-          <option value="line">cultivar</option>
+          <option value="cultivar">cultivar</option>
           <option value="none">Show all samples (not grouping)</option>
         </select>
         <button id="plot-btn" disabled>Generate plot</button>
@@ -927,7 +927,7 @@ This database was constructed in the Tsugama Laboratory (<a href="https://park.i
   function truncateForOption(s, maxLen) {
     const t = String(s || "").replace(/\s+/g, " ").trim();
     if (t.length <= maxLen) return t;
-    return t.slice(0, maxLen - 1) + "…";
+    return t.slice(0, Math.max(0, maxLen - 3)) + "...";
   }
 
   function findGenesByAnnotation(query, limit) {

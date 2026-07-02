@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 DATA_DIR="data"
 THREADS=4
 
@@ -50,7 +51,7 @@ echo "[BLASTDB] makeblastdb"
 makeblastdb -in "$DATA_DIR/Os_proteins.fasta" -dbtype prot -out "$DATA_DIR/Os_proteins.fasta" >/dev/null
 
 echo "[BUILD] Os_gene_annotation_list.tsv"
-python3 build_Os_annotation.py \
+python3 "$SCRIPT_DIR/build_Os_annotation.py" \
   --gene-en "$DATA_DIR/gene_en_os_list.tsv" \
   --func "$DATA_DIR/osa1_r7.all_models.functional_annotation.txt" \
   --goslim "$DATA_DIR/osa1_r7.all_models.GOSlim.txt" \
