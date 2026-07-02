@@ -487,7 +487,7 @@ while IFS=, read -r srr samn bio old_name lib; do
         echo "Generate TPM matrix ${out}_TPM_matrix.csv..."
         # Geneid 列から遺伝子名をヘッダに (1行目 "Geneid" は除く)
         genes=$(cut -f1 "${tpm_file}" | sed '1d' | paste -sd',' -)
-        echo "BioProject,SRA,Biosample,treatment,tissue,stage,cultivar,code,temperature,attributes,${genes}" \
+        echo "BioProject,SRA,BioSample,treatment,tissue,stage,cultivar,code,temperature,attributes,${genes}" \
             > "${out}_TPM_matrix.csv"
     fi
 
@@ -514,7 +514,7 @@ while IFS=, read -r srr samn bio old_name lib; do
         echo "Generating Count matrix ${out}_count_matrix.csv..."
         # Geneid をヘッダに（TPMと同じ並び）
         genes_count=$(cut -f1 "${code}_counts_for_tpm.txt" | sed '1d' | paste -sd',' -)
-        echo "PRJNA,SRR,SAMN,treatment,tissue,stage,line,code,temperature,attributes,${genes_count}" \
+        echo "BioProject,SRA,BioSample,treatment,tissue,stage,cultivar,code,temperature,attributes,${genes_count}" \
             > "${out}_count_matrix.csv"
     fi
 
@@ -531,13 +531,11 @@ while IFS=, read -r srr samn bio old_name lib; do
     set +e
     rm *ra*.fastq
     rm -f *.bam *.bam.bai
-    rm -f *counts.txt
     rm -f gene_length.tsv gene_id_tmp "${code}_counts_only" "${code}_counts_for_tpm.txt" "${tpm_file}"
     mv "${sra}.sra" sra
     mv ${sra} sra
     rm -f SAMN_info_tmp
     rm -rf *tmp
-    rm -rf *out
     set -e
 
 done < diff_tmp
