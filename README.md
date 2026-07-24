@@ -111,8 +111,7 @@ STAR --runThreadN 24 \
   --runMode genomeGenerate \
   --genomeDir /path/to/star_index \
   --genomeFastaFiles genome.fa \
-  --sjdbGTFfile genes.gtf \
-  --sjdbOverhang 100
+  --sjdbGTFfile genes.gtf
 ```
 
 2) Prepare BLAST databases for Arabidopsis/rice.
